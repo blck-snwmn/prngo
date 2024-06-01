@@ -1,3 +1,4 @@
+//nolint:gosec
 package chacha8
 
 import (
@@ -31,6 +32,7 @@ func Test_blockChacha8rand(t *testing.T) {
 			0x15, 0x16, 0x17, 0x18,
 			0x19, 0x1A, 0x1B, 0x1C,
 		}
+
 		cc := rand.New(NewChaCha8(key))
 		rr := rand.New(rand.NewChaCha8(key))
 
