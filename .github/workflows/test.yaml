@@ -7,8 +7,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-go@v4
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      - uses: actions/setup-go@19bb51245e9c80abacb2e91cc42b33fa478b8639 # v4
       - name: Run test
         run: |
           go test ./... --shuffle on --parallel 10 --p 10
