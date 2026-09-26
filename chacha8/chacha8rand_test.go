@@ -14,7 +14,7 @@ func Test_blockChacha8rand(t *testing.T) {
 		cc := rand.New(NewChaCha8(key))
 		rr := rand.New(rand.NewChaCha8(key))
 
-		for i := 0; i < 32; i++ {
+		for range 32 {
 			got := cc.Uint64()
 			want := rr.Uint64()
 			if got != want {
@@ -36,7 +36,7 @@ func Test_blockChacha8rand(t *testing.T) {
 		cc := rand.New(NewChaCha8(key))
 		rr := rand.New(rand.NewChaCha8(key))
 
-		for i := 0; i < 32; i++ {
+		for range 32 {
 			got := cc.Uint64()
 			want := rr.Uint64()
 			if got != want {
