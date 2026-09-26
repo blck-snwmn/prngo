@@ -109,11 +109,11 @@ var _ rand.Source = (*Chacha8)(nil)
 
 func NewChaCha8(seed [32]byte) *Chacha8 {
 	ss := make([]state, 0, 4)
-	for i := 0; i < 4; i++ {
+	for i := range 4 {
 		nonce := make([]byte, 12)
 		s, _ := newState(seed[:], nonce, uint32(i))
 		init := s.clone()
-		for i := 0; i < 4; i++ { // 4 iterations = 8 rounds
+		for range 4 { // 4 iterations = 8 rounds
 			s.innerBlock()
 		}
 		s[4] += init[4]
